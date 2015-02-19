@@ -30,7 +30,7 @@ class BattleShips < Sinatra::Base
       board_size = params[:board_size].to_i
       board = Board.new({size: board_size, content: Cell})
       @grid = board.grid
-      @grid.each{|cell| cell.last.content = Water.new}
+      # @grid.each{|cell| cell.last.content = Water.new}
       session[:board] = board
       @target = 'This is your first shot'
       erb :board
